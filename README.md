@@ -1,9 +1,20 @@
 # Down666
 
-[Tải bản mới nhất](https://github.com/nnhatnam05/down666-releases/releases/latest)
+[Tải bộ cài mới nhất](https://github.com/nnhatnam05/down666/releases/latest)
 
-## Cài đặt lần đầu hoặc chuyển từ V.0.1.0
+## Quyền sử dụng
 
-1. Mở trang bản mới nhất và tải tệp `Down666-Setup-<version>.exe`.
-2. Đóng Down666 rồi chạy Setup. Nếu đã cài, chọn cùng vị trí và cùng phạm vi người dùng để cài đè. Không cần gỡ trước.
-3. Mở ứng dụng. Các bản mới sau đó được tải trong nền và áp dụng khi thoát hoặc bấm khởi động lại.
+Down666 yêu cầu **mã giấy phép hợp lệ** để sử dụng. Tải bộ cài không cấp quyền sử dụng miễn phí. Liên hệ người bán để mua hoặc thuê, nhận mã kích hoạt và gia hạn.
+
+Giấy phép được kích hoạt theo thiết bị. Ứng dụng kiểm tra quyền sử dụng định kỳ và khóa chức năng khi hết hạn hoặc bị thu hồi. Cần Internet để kích hoạt và xác minh lại.
+
+## Cài đặt
+
+1. Tải `Down666-Setup-<version>.exe` từ Releases.
+2. Đóng Down666 rồi chạy Setup. Nếu đã cài, chọn cùng vị trí và cùng phạm vi người dùng để cài đè; không cần gỡ trước.
+3. Mở ứng dụng và nhập mã giấy phép cấp riêng cho bạn.
+4. Các bản mới sau đó được tải trong nền và áp dụng khi thoát hoặc chọn khởi động lại.
+
+Người dùng V.0.1.0 đã tắt updater cần cài đè bản mới một lần. Người dùng bản đã bật updater có thể nhận bản mới trong ứng dụng.
+
+Repo này chỉ chứa bộ cài và hướng dẫn; không chứa mã nguồn ứng dụng, khóa quản trị hoặc mã kích hoạt.
