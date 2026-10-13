@@ -14,7 +14,3 @@ Giấy phép được kích hoạt theo thiết bị. Ứng dụng kiểm tra qu
 2. Đóng Down666 rồi chạy Setup. Nếu đã cài, chọn cùng vị trí và cùng phạm vi người dùng để cài đè; không cần gỡ trước.
 3. Mở ứng dụng và nhập mã giấy phép cấp riêng cho bạn.
 4. Các bản mới sau đó được tải trong nền và áp dụng khi thoát hoặc chọn khởi động lại.
-
-Người dùng V.0.1.0 đã tắt updater cần cài đè bản mới một lần. Người dùng bản đã bật updater có thể nhận bản mới trong ứng dụng.
-
-Repo này chỉ chứa bộ cài và hướng dẫn; không chứa mã nguồn ứng dụng, khóa quản trị hoặc mã kích hoạt.
