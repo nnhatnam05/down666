@@ -1,0 +1,41 @@
+name: Keep one public release
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    branches: [main]
+    paths: [.github/workflows/single-release.yml]
+permissions:
+  contents: write
+concurrency:
+  group: public-release-catalog
+  cancel-in-progress: false
+jobs:
+  archive-old-releases:
+    if: github.repository == 'nnhatnam05/down666'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep latest release; archive earlier releases as drafts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          keep="$(gh api "repos/$GITHUB_REPOSITORY/releases/latest" --jq '.tag_name')"
+          [[ "$keep" =~ ^v0\.2\.[0-9]+$ ]]
+          latest="$(gh api "repos/$GITHUB_REPOSITORY/releases/latest")"
+          echo "$latest" | jq -e '.draft == false and .prerelease == false and ([.assets[].name] | index("latest.yml") != null)' >/dev/null
+          # Never archive the new release before installer and signature files exist.
+          version="${keep#v}"
+          echo "$latest" | jq -e --arg exe "Down666-Setup-$version.exe" '[.assets[].name] | index($exe) != null and index($exe + ".sig.json") != null and index("HUONG-DAN.md") != null' >/dev/null
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq '.[] | select(.draft == false) | [.id, .tag_name] | @tsv' |
+          while IFS=$'\t' read -r id tag; do
+            if [[ "$tag" != "$keep" ]]; then
+              gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$id" -F draft=true -f make_latest=false >/dev/null
+              echo "Archived as draft: $tag"
+            fi
+          done
+          count="$(gh api --paginate "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq '.[] | select(.draft == false) | .id' | wc -l)"
+          [[ "$count" -eq 1 ]]
+          echo "Public release: $keep"
