@@ -36,6 +36,3 @@ Phạm vi radar chỉ lọc hiển thị. Dữ liệu tên, vị trí và số l
 ## Liên kết
 
 - [Tải bộ cài mới nhất](https://github.com/nnhatnam05/down666/releases/latest)
-- [Đọc hướng dẫn sử dụng đầy đủ](HUONG-DAN.md)
-
-Kho này chỉ phát hành bộ cài và tài liệu. Mã nguồn ứng dụng được quản lý riêng tư.
