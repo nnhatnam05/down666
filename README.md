@@ -1,4 +1,4 @@
-# Down666 — Thoại theo vị trí, radar và bản đồ cho The Isle
+# Down666
 
 **Phiên bản kỹ thuật 0.2.20 · Hiển thị V.0.1.10 · Windows 64 bit**
 
